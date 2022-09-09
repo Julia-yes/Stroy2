@@ -1,0 +1,58 @@
+@use '_variables';
+
+.btn {    
+    font-family: 'Montserrat';
+    border-radius: 15px;   
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.035em;
+    cursor: pointer;
+    transition: color 0.3s, background-color 0.3s, border-color 0.3s;
+    display: inline-block;
+
+    &:hover {
+        background-color: variables.$main-color;
+        color: white;
+        border-color: variables.$main-color; 
+    }
+
+    &__transparent {
+        background-color: transparent;
+        border: 1px solid variables.$border-color;
+        font-weight: 300;        
+        padding: 10px 20px; 
+    }
+
+    &_green {
+        background-color: variables.$main-color;
+        color: white;
+        font-weight: 500;
+        border: none;
+        padding: 10px 45px;
+
+        &:hover {
+            background-color: variables.$main-color_bright;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .btn__transparent {
+        order: 2;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .btn__transparent {
+        font-size: 15px;
+        line-height: 18px;
+        padding: 5px;
+    }
+}
+
+@media screen and (max-width: 428px) {
+    .btn__transparent {
+        height: auto;
+        font-size: 13px;
+    }
+}

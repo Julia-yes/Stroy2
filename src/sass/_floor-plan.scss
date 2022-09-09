@@ -1,0 +1,216 @@
+@use '_variables';
+
+section .floor-plan {
+
+    padding: 0 40px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+
+    &__nav {
+        display: flex;
+        flex-direction: row;
+    }
+
+    &__link {
+        color: black;
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 32px;
+        line-height: 39px;
+        text-decoration: none;
+        padding-right: 20px;
+        position: relative;
+
+        &:after { 
+            content: "";
+            position: absolute;
+            bottom: -12px;
+            left:0;
+            display: block;
+            background: none repeat scroll 0 0 transparent;
+            height: 2px;
+            width: 0;
+            background: variables.$main-color;
+            transition: width 0.3s ease 0s, left 0.3s ease 0s;
+        }
+            
+        &:hover::after { 
+            width: 80%; 
+        }
+
+        &:active {
+            font-weight: 600;
+
+            &::after { 
+            width: 80%; 
+            }
+        }        
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-top: 60px;
+        margin: 0 auto;
+    }
+
+    &__img {
+        width: 505px;
+        height: 505px;
+        object-fit: cover;
+        padding-bottom: 65px;
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__condition {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__text {
+        font-family: 'Lato';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 24px;
+        padding: 10px 0;
+        position: relative;
+
+        &::before { 
+            content: "";
+            position: absolute;
+            top: -10px;
+            left:0;
+            display: block;
+            height: 2px;
+            width: 35%;
+            background: variables.$main-color;
+        }
+    }
+
+    &__number {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 32px;
+        line-height: 39px;
+    }
+
+    &__bottom {
+        display: flex;
+        flex-direction: column;
+        padding: 70px 0 140px;
+        align-items: center;
+        width: 880px;
+        margin: 0 auto;
+    }
+
+    &__question {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 29px;
+        text-align: center;
+    }
+
+    &__consultation {
+        font-family: 'Lato';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 24px;
+        line-height: 29px;
+        text-align: center;
+        padding-top: 10px;
+        padding-bottom: 40px;
+    }
+
+    &__btn {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 29px;
+        color: #FFF8F8;
+        height: 54px;
+        box-sizing: border-box;
+    }
+}
+
+
+@media screen and (max-width: 1100px) {
+    section .floor-plan {
+        &__img {
+            width: 355px;
+            height: 355px;
+        }
+
+        &__content {
+            justify-content: center;
+            gap: 45px;
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    section .floor-plan {
+        &__bottom {
+            width: 100%;
+            padding: 70px 10px 140px 10px;
+        }
+        &__content {
+            gap: 35px;
+        }
+        &__img {
+            width: 325px;
+            height: 325px;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    section .floor-plan {
+        &__img {
+            width: 355px;
+            height: 355px;
+        }
+        &__content {
+            flex-direction: column;
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    section .floor-plan {
+
+        &__btn {
+            display: flex;
+            align-items: center;
+            font-size: 20px;
+            height: 75px;
+            text-align: center;
+        }
+
+        &__img {
+            width: 240px;
+            height: 240px;
+        }
+
+        &__link {
+            font-size: 20px;
+            line-height: 1.5;
+        }
+
+        &__bottom {
+            padding: 70px 0 140px;
+        }
+    }
+}

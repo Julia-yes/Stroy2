@@ -1,0 +1,92 @@
+@use '_variables';
+
+.components {
+    padding: 45px 0 70px;
+
+
+    &__title {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 32px;
+        line-height: 39px;
+        padding-bottom: 35px;
+        text-align: left;
+        text-transform: none;
+    }
+
+    &__description {
+        font-family: 'Lato';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 29px;
+        padding-left: 15px;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding-bottom: 40px;
+        width: 425px;        
+    }
+
+    &__img {
+        width: 55px;
+        height: 55px;
+    }
+
+    &__tick {
+        padding: 10px;
+        border: 1px solid variables.$border-color;
+        border-radius: 15px;
+        display: inline-block;        
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .components {
+        padding: 45px 40px 70px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .components {
+        &__item {
+            width: 100%;        
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .components {
+        &__img {
+            width: 45px;
+            height: 45px;
+        }
+    
+        &__tick {
+            padding: 5px;            
+        }
+
+        &__item {
+            align-items: flex-start;
+        }
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .components {
+        &__description {
+            font-size: 18px;       
+            line-height: 22px; 
+        }
+    }
+}

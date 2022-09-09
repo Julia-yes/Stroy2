@@ -1,0 +1,305 @@
+@use '_variables';
+
+.carousel-block {    
+    padding: 45px 0 115px 38px;
+
+    &__title {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 32px;
+        line-height: 39px;
+        text-transform: uppercase;
+        padding-bottom: 30px;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    &__carousel {
+        width: 876px;
+        height: 525px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__text {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.5;
+
+        &_normal {
+            font-weight: 300;
+        }
+    }
+
+    &__number {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 32px;
+        line-height: 39px;
+
+        &_1 {
+            padding: 15px 0;
+        }
+
+        &_small {
+            font-size: 24px;
+            line-height: 29px;
+            padding-bottom: 10px;
+        }
+    }
+
+    &__detailed.carousel-block__detailed {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 200;
+        font-size: 13px;
+        line-height: 16px;
+        border-bottom: 1px dashed variables.$border-color;
+        margin-bottom: 25px;
+        display: inline-block;
+        cursor: pointer;
+        transition: border 0.3s, color 0.3s;
+        color: variables.$text-color ;
+        text-decoration: none;
+
+
+        &:hover {
+            border-bottom: 1px solid variables.$border-color;
+        }
+
+        &:active {
+            color: variables.$border-color;
+        }
+    }
+
+    &__squares {
+        display: flex;
+        flex-direction: row;
+        padding: 25px 0 40px;
+    }
+
+    &__square {
+        display: flex;
+        flex-direction: column;
+        width: 92px;
+        height: 92px;
+        border: 1px solid variables.$border-color;
+        border-radius: 15px;
+        padding: 15px 10px;
+        box-sizing: border-box;
+        margin-right: 15px;
+            &-2 {
+                display: flex;
+                flex-direction: row;
+            }
+    }
+
+    &__btn {
+        padding: 10px 30px;
+        height: auto;
+        text-align: center;
+    }
+}
+
+
+@media screen and (max-width: 1230px) {
+    .carousel-block {  
+        padding-left: 40px;
+
+        &__content {
+            justify-content: center;
+            gap: 45px;
+            position: relative;  
+        }
+
+        &__text-content {
+            width: 205px;
+        }
+
+        &__carousel {
+            width: 468px;
+            height: 255px;
+        }
+        
+        &__squares {
+            position: absolute;
+            bottom: -45px;
+            left: 60%;
+        }
+
+        &__square {
+            width: 80px;
+            height: 80px;
+        }
+
+        &__number {
+            font-size: 24px;
+            line-height: 29px;
+            padding-top: 10px;
+        
+            &_small {
+                font-size: 16px;
+                line-height: 20px;
+                padding-bottom: 0px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .carousel-block {  
+        margin-top: 70px;
+        padding-top: 40px;
+
+        &__title {
+            font-size: 20px;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .carousel-block {  
+        margin-top: 130px;
+
+        &__title {
+            font-size: 24px;
+            line-height: 29px;
+        }
+
+        &__content {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        &__text-content {
+            order: 2;
+            padding-top: 230px;
+        }
+
+        &__text-content_left {
+            position: absolute;
+            left: 60px;
+            bottom: 310px;
+        }
+
+        &__squares {
+            bottom: 220px;
+            left: 50%;
+        }
+
+        &__square {
+            margin-bottom: 10px;
+            padding-top: 0;
+
+            &-2 {
+                flex-direction: column;
+            }
+
+            &_big {
+                height: 170px;
+                justify-content: center;
+            }
+        }
+
+        &__number {
+            font-size: 32px;
+            line-height: 39px;
+        
+            &_small {
+                font-size: 24px;
+                line-height: 29px;
+            }
+
+            &_center {
+                text-align: center;
+            }
+        }
+
+        &__text {
+            font-size: 20px;
+            line-height: 24px;
+
+            &_small {
+                font-size: 13px;
+            }
+
+            &_normal {
+                text-align: center;
+            }
+        }
+
+        &__detailed.carousel-block__detailed {
+            text-align: center;
+        }
+        
+        &__btn {
+            width: 267px;
+            position: relative;
+            left: -55px;
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .carousel-block {  
+        padding: 35px;
+        &__carousel {
+            width: 100%;
+            height: auto;
+        }       
+
+        &__text-content_left {
+            left: 0;
+        }
+
+        &__squares {
+            right: 0;
+            left: auto;
+        }
+
+        &__text {
+            font-size: 16px;
+        }
+
+        &__number {
+            padding: 0;
+        }
+
+        &__square {
+            width: 72px;
+            height: 72px;
+            padding: 0;
+        }
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .carousel-block {  
+        &__squares {
+            flex-direction: column;
+        }
+
+        &__title {
+            font-size: 20px;
+        }
+        
+        &__btn {
+            width: 100%;
+            box-sizing: border-box;
+            position: static;
+        }
+    }
+}

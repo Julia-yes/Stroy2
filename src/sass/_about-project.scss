@@ -1,0 +1,54 @@
+@use '_variables';
+
+.about-project {
+    padding: 0 40px 50px;
+
+    &__title {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 32px;
+        line-height: 39px;
+        text-align: center;
+        text-transform: none;
+        padding-bottom: 25px;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__item {
+        width: 40%;
+        height: auto;
+
+        &_2 {
+            padding-bottom: 20px;
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .about-project {
+        &__content {
+            flex-direction: column;
+        }
+
+        &__item {
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .about-project {
+        &__title {
+            font-size: 24px;
+        }
+    }
+}

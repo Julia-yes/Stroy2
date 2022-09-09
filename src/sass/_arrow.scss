@@ -1,0 +1,81 @@
+@use '_variables';
+
+.arrow {
+    height: 12px;
+    width: 35px;
+    position: relative;
+    margin: 0 auto;
+    position: absolute;    
+
+    // &:hover {
+    //     .arrow__top::after {
+    //         left: 0;
+    //         transition-delay: 0.15s;
+    //     }
+    //     .arrow__bottom::after {
+    //         right: 0;
+    //         transition-delay: 0s;
+    //     }
+    // }
+
+    &_left {
+        left: 35px;
+        bottom: 50%;
+        transform: rotate(180deg) scale(1, -1);
+    }
+
+    &_right {
+        right: 20px;
+        bottom: 50%;
+        transform: translateX(-50%);
+    }
+
+    &__top, 
+    &__bottom {
+        background: white;
+        height: 2px;
+        left: 0px;
+        position: absolute;    
+        width: 30px;
+    }
+
+    &__top {
+        transform: rotate(45deg);
+        transform-origin: bottom right;
+        top: 15px;
+
+        &::after {
+            left: 100%;
+            right: 0;
+            transition-delay: 0s;
+        }
+    }
+
+    &__bottom {
+        transform: rotate(-45deg);
+        transform-origin: top right;
+        top: 15px;
+
+        &::after {
+            left: 0;
+            right: 100%;
+            transition-delay: 0.15s;
+        }
+    }
+
+    &__top::after, 
+    &__bottom::after {
+        background: white;
+        content: '';
+        height: 100%;
+        position: absolute;
+        top: 0;
+        transition: all 0.15s;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .arrow {
+        display: none;
+    }
+}
